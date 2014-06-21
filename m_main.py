@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import os, sys, pickle
-import m_print, m_search, m_insert
+import m_print, m_search, m_insert, m_update, m_delete
 
 print '''\033[34;1m
 ***Welcome to contact list***
@@ -54,6 +54,10 @@ def main():
 					break
 		elif cmd == 'i':
 			m_insert.f_insert(_entry)
+		elif cmd == 'u':
+			m_update.f_update(_entry)
+		elif cmd == 'd':
+			m_delete.f_delete(_entry)
 		elif cmd == 'q' or 'e':
 			with open (_contacts_binary, 'wb') as f:
 				pickle.dump(_entry, f)
